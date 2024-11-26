@@ -42,27 +42,6 @@ A responsive and feature-rich admin dashboard for managing users, roles, and per
    ```
 
 3. **Start JSON Server**:
-   - Create a `db.json` file in the root directory with the following structure:
-     ```json
-     {
-       "users": [
-         {
-           "id": 1,
-           "name": "John Doe",
-           "email": "john@example.com",
-           "role": "Admin",
-           "status": "Active"
-         }
-       ],
-       "roles": [
-         {
-           "id": 1,
-           "name": "Admin",
-           "permissions": ["Read", "Write", "Delete"]
-         }
-       ]
-     }
-     ```
    - Run JSON Server:
      ```bash
      npx json-server --watch db.json --port 3001

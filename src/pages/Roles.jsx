@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import { Button, TextField, Dialog, DialogTitle, DialogContent, DialogActions, MenuItem } from "@mui/material";
-import { useForm } from "react-hook-form";
+import { Button } from "@mui/material";
 import { getRoles, addRole, updateRole, deleteRole } from "../services/api";
 import RoleForm from "../components/RoleForm";
 
@@ -88,7 +87,7 @@ const Roles = () => {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h2>Role Management</h2>
+      <h2 style={{ marginBottom: "12px" }}>Role Management</h2>
       <Button variant="contained" color="primary" onClick={() => handleOpen()} style={{ marginBottom: "20px" }}>
         Add Role
       </Button>

@@ -1,7 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { TextField, Button, MenuItem, Select, InputLabel, FormControl } from "@mui/material";
+import { getRoles } from "../services/api";
 
-const UserForm = ({ user, onSubmit, onCancel }) => {
+
+const UserForm = ({ user, onSubmit, onCancel, roles }) => {
+
+
+  const [newroles, setNewRoles] = useState([]);
+const fetchRoles = async () => {
+  try {
+    const response = await getRoles();
+    setNewRoles(response.data);
+  } catch (error) {
+    console.error("Error fetching users:", error);
+  }
+};
+useEffect(() => {
+  fetchRoles();
+}, []);
+newroles.map((role)=>(
+  console.log(role.name)
+))
+
+
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -9,7 +31,6 @@ const UserForm = ({ user, onSubmit, onCancel }) => {
     status: "Active",
   });
 
-  const roles = ["Admin", "Editor", "Viewer"]; // Predefined roles
   const statuses = ["Active", "Inactive"]; // Predefined statuses
 
   // Populate form with user data when editing
@@ -19,14 +40,14 @@ const UserForm = ({ user, onSubmit, onCancel }) => {
         name: user.name || "",
         email: user.email || "",
         role: user.role || "",
-        status: user.status || "",
+        status: user.status || "Active",
       });
     } else {
       setFormData({
         name: "",
         email: "",
         role: "",
-        status: "",
+        status: "Active",
       });
     }
   }, [user]);
@@ -64,34 +85,38 @@ const UserForm = ({ user, onSubmit, onCancel }) => {
           labelId="role-label"
           name="role"
           id="role"
-          label="role"
+          label="Role"
           value={formData.role}
           onChange={handleChange}
         >
-          {roles.map((role) => (
-            <MenuItem key={role} value={role}>
-              {role}
+          {newroles && newroles.length > 0 ? (
+            newroles.map((role) => (
+              <MenuItem key={role} value={role}>
+                {role.name}
+              </MenuItem>
+            ))
+          ) : (
+            <MenuItem disabled>No Roles Available</MenuItem>
+          )}
+        </Select>
+      </FormControl>
+      <FormControl fullWidth required>
+        <InputLabel id="status-label">Status</InputLabel>
+        <Select
+          labelId="status-label"
+          id="status"
+          name="status"
+          value={formData.status}
+          label="Status"
+          onChange={handleChange}
+        >
+          {statuses.map((status) => (
+            <MenuItem key={status} value={status}>
+              {status}
             </MenuItem>
           ))}
         </Select>
       </FormControl>
-      <FormControl fullWidth required>
-  <InputLabel id="status-label">Status</InputLabel>
-  <Select
-    labelId="status-label"
-    id="status"
-    name="status"
-    value={formData.status}
-    label="status"
-    onChange={handleChange}
-  >
-    {statuses.map((status) => (
-      <MenuItem key={status} value={status}>
-        {status}
-      </MenuItem>
-    ))}
-  </Select>
-</FormControl>
       <Button type="submit" variant="contained" color="primary" style={{ width: "140px" }}>
         {user ? "Update User" : "Add User"}
       </Button>

@@ -39,7 +39,7 @@ const Dashboard = () => {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h2>Dashboard</h2>
+      <h2 style={{marginBottom:'12px'}}>Dashboard</h2>
       <Grid container spacing={3} style={{ marginBottom: "30px" }}>
         {/* Total Users Card */}
         <Grid item xs={12} sm={6} md={4}>
@@ -92,7 +92,7 @@ const Dashboard = () => {
         ))}
       </Grid>
 
-      <h3>Users</h3>
+      <h3 style={{marginBottom:'12px'}}>Users</h3>
       <Grid container spacing={3}>
         {users.map((user) => (
           <Grid item xs={12} sm={6} md={2} key={user.id}>

@@ -29,10 +29,10 @@
       "id": "e759"
     },
     {
-      "id": "7dfc",
+      "id": "6a1f",
       "name": "preeti",
-      "email": "yirat@halo.in",
-      "role": "Viewer",
+      "email": "Ddsdf@gmail.com",
+      "role": "Editor",
       "status": "Active"
     }
   ],
@@ -51,6 +51,23 @@
       "name": "Viewer",
       "permissions": [
         "Read"
+      ]
+    },
+    {
+      "id": "09a0",
+      "name": "Editor",
+      "permissions": [
+        "Read",
+        "Write",
+        "Update"
+      ]
+    },
+    {
+      "id": "4bf3",
+      "name": "Verifier",
+      "permissions": [
+        "Read",
+        "Update"
       ]
     }
   ]
