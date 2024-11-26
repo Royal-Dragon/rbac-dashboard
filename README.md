@@ -41,8 +41,7 @@ A responsive and feature-rich admin dashboard for managing users, roles, and per
    npm install
    ```
 
-3. **Start JSON Server**:
-   - Run JSON Server:
+3. **Start JSON Server in another Terminal**:
      ```bash
      npx json-server --watch db.json --port 3001
      ```
@@ -111,9 +110,9 @@ src/
 ## Screenshots
 
 ### Dashboard
-![Dashboard Screenshot](path/to/dashboard-screenshot.png)
+![Dashboard Screenshot](/public/ref%201.png)
 
 ### User Management
-![Users Screenshot](path/to/users-screenshot.png)
+![Users Screenshot](/public/ref%202.png)
 
 ---
