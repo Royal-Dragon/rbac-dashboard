@@ -1,0 +1,57 @@
+{
+  "users": [
+    {
+      "name": "goodboy",
+      "email": "boyy@gmail.com",
+      "role": "Viewer",
+      "status": "Active",
+      "id": "0sb2"
+    },
+    {
+      "name": "Bob",
+      "email": "bob@example.com",
+      "role": "Viewer",
+      "status": "Inactive",
+      "id": "0h43"
+    },
+    {
+      "id": "50c6",
+      "name": "abhiram royals",
+      "email": "royals@gmail.com",
+      "role": "Admin",
+      "status": "Active"
+    },
+    {
+      "name": "batman",
+      "email": "bruce@yaaho.in",
+      "role": "Editor",
+      "status": "Inactive",
+      "id": "e759"
+    },
+    {
+      "id": "7dfc",
+      "name": "preeti",
+      "email": "yirat@halo.in",
+      "role": "Viewer",
+      "status": "Active"
+    }
+  ],
+  "roles": [
+    {
+      "id": "1",
+      "name": "Admin",
+      "permissions": [
+        "Read",
+        "Write",
+        "Delete"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Viewer",
+      "permissions": [
+        "Read"
+      ]
+    }
+  ]
+}
